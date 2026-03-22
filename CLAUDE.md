@@ -53,7 +53,7 @@ hitplus run --model swing_decision --full   # full pipeline (all training data)
 
 - Schema reference: `~/.claude/skills/mlb-stats-query/references/schema.md`
 - `pitches.balls`/`strikes` = count BEFORE the pitch, not after
-- Exclude `*B` (pitch clock auto-ball) and `H` (HBP) from swing decision models
+- `*B` = ball in dirt (a take, not excluded). Exclude `H` (HBP) from swing decision models
 - Statcast fields (spinRate, extension, plateTime) are NULL pre-2015
 - Always filter `g.gameType = 'R'` for regular season
 

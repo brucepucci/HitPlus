@@ -20,7 +20,7 @@ The user's top priorities: **robust validation**, idempotent stateful pipeline, 
 - Foundation for Hit+ — swing decision is the first branching point in any PA outcome tree
 
 **Target:** `is_swing = 1` if `call_code IN ('S','F','X','D','E','T','W','L','M')`, else `0`
-- Exclude `*B` (pitch clock auto-ball) — batter had no agency
+- `*B` (ball in dirt) is a take — batter saw the pitch and didn't swing
 - Exclude `H` (hit by pitch) — batter had no swing/take decision
 
 **Features (v1 — deliberately lean):**
