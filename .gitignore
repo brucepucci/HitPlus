@@ -1,0 +1,23 @@
+# Data
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# Artifacts
+artifacts/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
