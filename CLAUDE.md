@@ -53,7 +53,7 @@ hitplus run --model swing_decision --full   # full pipeline (all training data)
 
 - Schema reference: `~/.claude/skills/mlb-stats-query/references/schema.md`
 - `pitches.balls`/`strikes` = count BEFORE the pitch, not after
-- Swing decision model: no exclusions. All call codes classified as swing or take (see PLAN.md for full table)
+- Swing decision model: no exclusions. All call codes classified as swing or take
 - Statcast fields (spinRate, extension, plateTime) are NULL pre-2015
 - Always filter `g.gameType = 'R'` for regular season
 
