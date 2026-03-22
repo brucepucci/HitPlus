@@ -54,9 +54,11 @@ The user's top priorities: **robust validation**, idempotent stateful pipeline, 
 | `pitch_type_encoded` | `type_code` | One-hot or target-encoded |
 | `balls`, `strikes` | count before pitch | Count context |
 | `is_two_strikes` | `strikes == 2` | Explicit protect-the-plate feature |
+| `spinRate` | spin rate (RPM) | Spin affects perceived movement |
+| `spinDirection` | spin direction (degrees 0-360) | Spin axis orientation |
 | `is_rhb`, `is_rhp`, `same_hand` | handedness | Platoon context |
 
-**Excluded from v1** (can measure lift later): outs, inning, score, runners, extension, plate time, spin rate/direction, batter identity.
+**Excluded from v1** (can measure lift later): outs, inning, score, runners, extension, plate time, batter identity.
 
 **Data Split — Iterative Sizing Strategy:**
 
