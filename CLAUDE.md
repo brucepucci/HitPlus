@@ -23,7 +23,7 @@ Pitch-by-pitch hitter outcome model inspired by Stuff+/PLV but from the batter's
 - **ruff** for linting
 - OOP where it makes sense, Pythonic style preferred, don't force abstractions
 - Simple models first — only add complexity for significant performance gains
-- Dev mode by default (2023 train / 2024 test); `--full` for 2018-2023 train
+- Dev mode by default (2024 only, random 70/30 split); `--full` for 2018-2023 temporal train / 2024 test
 
 ## Project Structure
 
@@ -65,5 +65,5 @@ hitplus viz --model swing_decision          # generate plots
 - Each step declares input/output artifact keys explicitly
 - Adding a new submodel = writing one `SubmodelSpec` subclass
 - Validation is the top priority — 6 metrics with hard thresholds, 4 calibration views, regression test gates
-- Temporal train/test splits only (no random splits) to prevent leakage
+- Dev mode uses random 70/30 split on 2024; full mode uses temporal split (2018-2023 train / 2024 test) to prevent leakage
 - 2025 season is a holdout — never used until final evaluation

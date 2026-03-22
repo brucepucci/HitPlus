@@ -40,14 +40,14 @@ The user's top priorities: **robust validation**, idempotent stateful pipeline, 
 
 **Excluded from v1** (can measure lift later): outs, inning, score, runners, extension, plate time, spin rate/direction, batter identity.
 
-**Temporal Split — Iterative Sizing Strategy:**
+**Data Split — Iterative Sizing Strategy:**
 
 Start small for fast iteration, scale up once the framework and model are validated:
 
-- **Dev mode (default):** Train on 2023 only (~718K pitches), test on 2024 (~700K). Fast feedback loops (~1.4M total).
-- **Full mode (`--full`):** Train on 2018-2023 (~4.1M pitches), test on 2024 (~700K). Run once framework is proven.
+- **Dev mode (default):** 2024 season only (~710K pitches), random 70/30 train/test split (~496K train / ~213K test). Fast feedback loops.
+- **Full mode (`--full`):** Train on 2018-2023 (~4.1M pitches), test on 2024 (~700K) using temporal split. Run once framework is proven.
 - **Holdout:** 2025 (~710K) — never touched until final evaluation in either mode.
-- **CV:** `TimeSeriesSplit` with folds on training data (2 folds in dev, 4 in full).
+- **CV:** Stratified k-fold in dev mode (3 folds); `TimeSeriesSplit` with 4 folds in full mode.
 
 The `HitPlusConfig` has a `dev_mode: bool = True` flag. CLI: `hitplus run --model swing_decision --full` to override.
 
