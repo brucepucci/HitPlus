@@ -47,8 +47,6 @@ make test              # unit tests
 make test-regression   # performance threshold tests
 hitplus run --model swing_decision          # full pipeline (dev mode)
 hitplus run --model swing_decision --full   # full pipeline (all training data)
-hitplus validate --model swing_decision     # validation only
-hitplus viz --model swing_decision          # generate plots
 ```
 
 ## Database Notes
