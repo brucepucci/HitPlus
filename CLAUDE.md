@@ -10,7 +10,7 @@ Pitch-by-pitch hitter outcome model inspired by Stuff+/PLV but from the batter's
 ## Tech Stack
 
 - **Python 3.11+** managed by **uv**
-- **pandas + SQL** for data transformations
+- **polars + SQL** for data transformations
 - **scikit-learn** + **LightGBM** for modeling
 - **Click** for CLI (`hitplus` entrypoint)
 - **Pydantic** for config
