@@ -19,9 +19,27 @@ The user's top priorities: **robust validation**, idempotent stateful pipeline, 
 - Strong domain validation available (batters swing more in zone, with 2 strikes, etc.)
 - Foundation for Hit+ — swing decision is the first branching point in any PA outcome tree
 
-**Target:** `is_swing = 1` if `call_code IN ('S','F','X','D','E','T','W','L','M')`, else `0`
-- `*B` (ball in dirt) is a take — batter saw the pitch and didn't swing
-- Exclude `H` (hit by pitch) — batter had no swing/take decision
+**Target:** `is_swing` — binary classification of every pitch as swing or take. No exclusions.
+
+| Code | Description | Count | Classification |
+|------|-------------|-------|----------------|
+| `B` | Ball | 1,765,370 | Take |
+| `*B` | Ball In Dirt | 120,857 | Take |
+| `C` | Called Strike | 868,392 | Take |
+| `H` | Hit By Pitch | 14,945 | Take |
+| `P` | Pitchout | 393 | Take |
+| `S` | Swinging Strike | 552,186 | Swing |
+| `F` | Foul | 937,762 | Swing |
+| `T` | Foul Tip | 50,702 | Swing |
+| `W` | Swinging Strike (Blocked) | 34,777 | Swing |
+| `L` | Foul Bunt | 10,224 | Swing |
+| `M` | Missed Bunt | 1,989 | Swing |
+| `X` | In Play, out(s) | 593,023 | Swing |
+| `D` | In Play, no out | 203,696 | Swing |
+| `E` | In Play, run(s) | 118,656 | Swing |
+| `O` | Foul Tip | 204 | Swing |
+| `R` | Foul Pitchout | 2 | Swing |
+| `Q` | Swinging Pitchout | 1 | Swing |
 
 **Features (v1 — deliberately lean):**
 
