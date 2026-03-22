@@ -170,18 +170,18 @@ All commands accept `--full` to use the full dataset instead of dev mode (2023 o
 
 ## Validation Framework (Critical Priority)
 
-### Metrics & Thresholds
+### Metrics
 
-| Metric | Threshold | Purpose |
-|--------|-----------|---------|
-| AUC-ROC | >= 0.82 | Discrimination |
-| AUC-PR | >= 0.80 | Precision-recall (balanced classes) |
-| Brier Score | <= 0.18 | Calibration quality |
-| Log Loss | <= 0.55 | Probabilistic accuracy |
-| ECE | <= 0.03 | Expected calibration error |
-| Accuracy | >= 0.74 | Sanity check only |
+| Metric | Purpose |
+|--------|---------|
+| AUC-ROC | Discrimination |
+| AUC-PR | Precision-recall (balanced classes) |
+| Brier Score | Calibration quality |
+| Log Loss | Probabilistic accuracy |
+| ECE | Expected calibration error |
+| Accuracy | Sanity check only |
 
-Thresholds stored in `tests/regression/thresholds.yaml` and enforced in both validation step (warning) and regression tests (hard fail).
+**Threshold strategy:** No hardcoded thresholds upfront. Train the first model, observe actual metrics, then set thresholds based on baseline performance. Thresholds will be stored in `tests/regression/thresholds.yaml` and enforced in both validation step (warning) and regression tests (hard fail).
 
 ### Calibration Analysis (4 views)
 
@@ -243,7 +243,7 @@ All plots use `plt.style.use('ggplot')` for consistent styling.
 ### Milestone 5: Validation Framework
 **Deliver:** `hitplus validate --model swing_decision` produces ValidationReport JSON. All metrics computed. Regression tests pass.
 **Files:** `validation/{metrics,calibration,thresholds,report}.py`, `steps/validate.py`, `tests/unit/{test_validate,test_metrics,test_calibration}.py`, `tests/regression/{test_swing_decision_performance.py,thresholds.yaml}`.
-**Acceptance:** All 6 metrics meet thresholds. Calibration bins computed for all 4 views. Report JSON is complete. `pytest -m regression` passes.
+**Acceptance:** All 6 metrics computed. Baseline thresholds set from first model run. Calibration bins computed for all 4 views. Report JSON is complete. `pytest -m regression` passes.
 **Fence:** No plots yet. Numbers only.
 
 ### Milestone 6: Visualizations
