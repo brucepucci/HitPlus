@@ -4,7 +4,7 @@
 
 Build a "Hit+" hitter-outcome model framework inspired by Stuff+/PLV but from the batter's perspective. The system is a collection of pitch-by-pitch submodels (swing decision, called strike, contact quality, etc.) that will eventually combine into a single Hit+ score. This plan focuses on building a robust, validated framework around the **first submodel only** — the Swing Decision Model — then making it trivial to add subsequent submodels.
 
-The user's top priorities: **robust validation**, idempotent stateful pipeline, CLI-driven, Pythonic, simple models first. Uses **polars** (not polars) for all DataFrame operations.
+The user's top priorities: **robust validation**, idempotent stateful pipeline, CLI-driven, Pythonic, simple models first. Uses **polars** (not pandas) for all DataFrame operations.
 
 **Data:** ~5.3M regular season pitches (2018-2025) in `data/mlb_stats.db` with excellent Statcast coverage (99.7%+ on velocity, location, movement, spin).
 
