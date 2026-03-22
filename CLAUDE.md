@@ -15,7 +15,7 @@ Pitch-by-pitch hitter outcome model inspired by Stuff+/PLV but from the batter's
 - **Click** for CLI (`hitplus` entrypoint)
 - **Pydantic** for config
 - **pytest** for unit and regression tests
-- **matplotlib/seaborn** for visualizations
+- **matplotlib/seaborn** for visualizations (ggplot style: `plt.style.use('ggplot')`)
 
 ## Style & Conventions
 

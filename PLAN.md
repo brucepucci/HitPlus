@@ -183,6 +183,8 @@ Contains: model name, submodel, timestamps, date ranges, sample sizes, all metri
 
 ## Visualizations (7 plots)
 
+All plots use `plt.style.use('ggplot')` for consistent styling.
+
 1. **Calibration curve** — predicted vs observed P(swing), 20 bins, confidence bands
 2. **Calibration by count** — 3x4 grid showing model knows 2-strike protect behavior
 3. **ROC curve** — with AUC annotated
