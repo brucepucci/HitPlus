@@ -45,8 +45,7 @@ The user's top priorities: **robust validation**, idempotent stateful pipeline, 
 Start small for fast iteration, scale up once the framework and model are validated:
 
 - **Dev mode (default):** 2024 season only (~710K pitches), random 70/30 train/test split (~496K train / ~213K test). Fast feedback loops.
-- **Full mode (`--full`):** Train on 2018-2023 (~4.1M pitches), test on 2024 (~700K) using temporal split. Run once framework is proven.
-- **Holdout:** 2025 (~710K) — never touched until final evaluation in either mode.
+- **Full mode (`--full`):** Train on 2022-2024 (~2.1M pitches), test on 2025 (~710K) using temporal split. Run once framework is proven.
 - **CV:** Stratified k-fold in dev mode (3 folds); `TimeSeriesSplit` with 4 folds in full mode.
 
 The `HitPlusConfig` has a `dev_mode: bool = True` flag. CLI: `hitplus run --model swing_decision --full` to override.
